@@ -1,8 +1,13 @@
-FROM caddy:builder AS builder
+# Build stage
+ARG CADDY_VERSION
+FROM caddy:2.10.2-builder AS builder
 
-RUN caddy-builder \
-    github.com/caddy-dns/cloudflare
+RUN xcaddy build \
+    --with github.com/caddy-dns/cloudflare
+#    --with github.com/WeidiDeng/caddy-cloudflare-ip
 
-FROM caddy:latest
+# Final stage
+FROM caddy:2.10.2
 
+# Copy the custom-built Caddy binary
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
