@@ -4,8 +4,8 @@ ARG DOCKER_META_VERSION
 FROM caddy:${DOCKER_META_VERSION}-builder AS builder
 
 RUN xcaddy build \
-  --with github.com/caddy-dns/cloudflare \
-  --with github.com/mholt/caddy-l4
+  --with github.com/caddy-dns/cloudflare
+# --with github.com/mholt/caddy-l4
 #    --with github.com/WeidiDeng/caddy-cloudflare-ip
 
 # Final stage
