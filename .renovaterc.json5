@@ -1,6 +1,6 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [
     "config:recommended",
     "docker:enableMajor",
     "helpers:pinGitHubActionDigests",
@@ -9,8 +9,9 @@
     "github>shelken/docker-images:.renovate/semanticCommits.json5",
     ":automergeBranch",
     ":dependencyDashboard",
-    ":disableRateLimiting"
+    ":disableRateLimiting",
+    ":timezone(Asia/Shanghai)",
   ],
-  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
-  packageRules: [],
+  dependencyDashboardTitle: "Renovate Dashboard 🤖",
+  schedule: ["every weekend"],
 }
