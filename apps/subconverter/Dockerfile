@@ -9,7 +9,7 @@ RUN apk add tzdata --no-cache && \
 
 COPY resource/groups.txt resource/rulesets.txt ./snippets/
 COPY resource/pref.yml ./
-COPY tmpl/clash.tpl base/
+COPY resource/tmpl/clash.tpl base/
 
 EXPOSE 25500
 
